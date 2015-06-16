@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "DeleteUser";
+    Layout = "~/Views/shared/AdminLayout.cshtml";
+}
+
+<html>
+<head>
+
+
+    <title>Delete Doctor- Medical Hospital Website</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <script src="~/Content/jquery-2.1.4.min.js"></script>
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="page">
+        <div class="home-page">
+            <div class="container">
+                <form id="signup" action="UserDelete" method="post">
+                    <div class="header">
+                        <h3>Delete User</h3>
+
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div class="inputs">
+
+                        <input type="id" name="ID" placeholder="Enter ID of User" required/>
+
+                        <button id="submit" href="/Admin/index">Delete User</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

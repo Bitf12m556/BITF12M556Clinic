@@ -1,0 +1,84 @@
+﻿@using Clinic.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Content/jquery-2.1.4.min.js"></script>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="background">
+        <div class="page">
+            <a href="/Home/index"><h1>Clinical System</h1></a>
+            <div class="sidebar">
+                <ul>
+                    <li class="selected"><a href="/Home/index" class="current">Home</a></li>
+                    <li><a href="/Home/Search">Search</a></li>
+                    <li><a href="/Home/about">About Us</a></li>
+                    <li><a href="/Home/service">Services</a></li>
+                    <li><a href="/Home/doctors">View Doctors</a></li>
+                    <li><a href="/Home/contacts">Contacts</a></li>
+                    <li><a href="/Home/Reports">Reports</a></li>
+
+                    @if (Session["user"] != null)
+                    {
+                        <li><a href="/Home/SendMsgAdmin">Message</a></li>
+                        <li><a href="/Home/Usermsg">Inbox</a></li>
+                        <li><a href="/Account/SignOut">SignOut</a></li> 
+                    }
+                    else
+                    { 
+                    <li><a href="/Account/SignIn">SignIn</a></li>
+                    <li><a href="/Account/SignUp">SignUp</a></li>
+                    }
+
+                </ul>
+                <div class="first">
+                    <div>
+                        @{
+                            
+                            User user = (User)Session["user"];
+                        }
+
+                        @if(user!=null)
+                        {
+                        <h3>Welcome..@user.Username</h3>
+                            String path = (String)Session["propic"];
+                             <img src="~/Files/@path" height="160" width="160" alt=""/>
+                            
+                        }
+                        else
+                        {
+                            <h3>Welcome to Clinic</h3>
+                            <img src="~/Content/themes/base/images/man.jpg" height="160" width="160" />
+                        }
+                       
+                        <p>
+                            We are Proud to Provide Quality health care to Patients
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3>We are here to Help you</h3>
+
+                        <img src="~/content/themes/base/images/doctors-and-nurse.jpg" alt="">
+                        <p>
+                            The Clinic had nearly 3.8 million patient encounters for the year ended September 30, 2014, and reported 383,380 unique patients in the Clinic system during this same period.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+            @RenderBody()
+
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

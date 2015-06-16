@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/shared/AccountLayout.cshtml";
+}
+
+<html>
+<head>
+
+
+    <title>SignUp - Medical Hospital Website</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="page">
+        <div class="home-page">
+            <div class="container">
+                <form id="signup" action="SignupUser" method="post" enctype="multipart/form-data">
+                    <div class="header">
+                        <h3>Sign Up</h3>
+                       
+
+                    </div>
+
+                    <div class="sep"></div>
+                    <div>
+                        <div class="inputs">
+                            <input type="name" id="name" name="name" placeholder="Name"  required />
+                            <input type="button" id="b1" value="check" />
+                            <div id="result"></div>
+                            @Scripts.Render("~/bundles/jquery")
+                            <script>
+
+                                $(document).ready(function () {
+
+                                    //$('#checking').hide();
+
+                                    $('#b1').click(function () {
+
+                                        var userName = $('#name').val();
+
+                                        //alert('User Name ='+ userName);
+                                        //$('#checking').show();
+                                        $.getJSON("/Account/CheckUserName?UserName=" + userName, function (data) {
+                                            $('#checking').hide();
+                                            if (data) {
+                                                $('#result').text("User already exists in database");
+
+                                            }
+                                            else {
+                                                $('#result').text("User Name is available");
+                                            }
+                                        });
+
+                                    });
+
+                                });
+                            </script>
+
+
+                            <input type="email" name="email" placeholder="email" required />
+
+                            <input type="password" name="pass" placeholder="Password" required />
+
+                            <input type="confirmpassword" name="cpass" placeholder="Retype password" required />
+
+                            <label>Upload Image</label>
+                            <input type="file" name="picture" required />
+
+                            @if (ViewBag.Invalid != null)
+                            {
+                                if (ViewBag.Invalid.Equals("wrong"))
+                                {
+                                    <h3>Password not matched, please enter pasword again</h3>
+                                }
+                            }
+
+                            <button id="submit">Sign Up</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

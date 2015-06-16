@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/shared/AdminLayout.cshtml";
+}
+
+
+@using Clinic.Models
+@model System.Collections.Generic.List<Clinic.Models.Inbox>
+
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <link href="~/datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/datatables/dataTables.bootstrap.min.js"></script>
+    <link href="~/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <script src="~/Content/jquery-2.1.4.min.js"></script>
+    <title>Doctors - Medical Hospital Website </title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div class="body">
+        @*<div class="about">*@
+        <div>
+
+            <section class="content-header">
+                <h1>{ Inbox }</h1>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div style="margin-left:60px" class="col-xs-12">
+                        <div class="box">
+
+                            <div class="box-header">
+
+                            </div>
+                            <div class=" box-body">
+                                <table id="example2" class="table table-bordered table-hover">
+
+                                    <thead style="background-color:aliceblue">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Message</th>
+                                            <th>Date</th>
+                                            <th>Delete</th>
+                                            <th>Reply</th>
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody>
+                                        @for (int i = 0; i < Model.Count; i++)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Model[i].Id
+                                                </td>
+                                                <td>
+                                                    @Model[i].Name
+                                                </td>
+                                                <td>
+                                                    @Model[i].Email
+                                                </td>
+                                                <td>
+                                                    @Model[i].Message
+                                                </td>
+                                                <td>
+                                                    @Model[i].date
+                                                </td>
+                                                @*<td>
+                                                    @Html.ActionLink("Edit", "EditItem", new { id = @Model[i].Id })
+                                                </td>*@
+                                                <td>
+                                                    @Html.ActionLink("Delete", "DeleteMessage", new { id = @Model[i].Id })
+                                                </td>
+                                                <td>
+                                                    @Html.ActionLink("Reply", "Reply")
+                                                </td>
+                                            
+                                            </tr>
+                                        }
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        @*</div>*@
+    </div>
+
+
+    <div class="footer">
+        <div>
+            <div>
+                <h4>Contact</h4>
+                <p>
+                    You can replace all this text with your own text.
+                </p>
+                <a href="/Home/contacts">Contacts</a>
+            </div>
+            <div>
+                <h4>Links</h4>
+                <ul>
+                    <li>
+                        <a href="/Home/index">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/Home/service">Services</a>
+                    </li>
+                    <li>
+                        <a href="/Home/doctors">Doctors</a>
+                    </li>
+                    <li>
+                        <a href="/Home/contacts">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/Home/Reports">Reports</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="connect">
+                <h4>Keep In Touch</h4>
+                <a href="http://twitter.com" id="twitter">twitter</a> <a href="http://facebook.com" id="facebook">facebook</a> <a href="http://google.com" id="googleplus">google+</a>
+            </div>
+        </div>
+        <p>
+            &#169; Copyright 2015. All rights reserved :P
+        </p>
+    </div>
+
+</body>
+</html>
+
+
+
+

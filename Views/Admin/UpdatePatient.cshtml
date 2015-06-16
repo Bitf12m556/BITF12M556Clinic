@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "UpdatePatient";
+    Layout = "~/Views/shared/AdminLayout.cshtml";
+}
+
+<html>
+<head>
+
+
+    <title>Update Patient- Medical Hospital Website</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="page">
+        <div class="home-page">
+            <div class="container">
+                <form id="signup" action="PatientUpdate" method="post">
+                    <div class="header">
+                        <h3>Update Patient</h3>
+
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div class="inputs">
+
+                        <input type="Id" name="ID" placeholder="ID" required />
+                      
+                        <input type="phone" name="Phone" placeholder="Phone" required />
+
+                        <input type="address" name="Address" placeholder="Address" required />
+
+                        @if (ViewBag.Invalid != null)
+                        {
+                            if (ViewBag.Invalid.Equals("wrong"))
+                            {
+                                <h3>Your ID does not Exist , Please Enter Again.</h3>
+                            }
+                        }
+                        
+                        <button id="submit">Update Patient</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        @*<div class="footer">
+                <div>
+                    <div>
+                        <h4>Contact</h4>
+                        <p>
+                            You can replace all this text with your own text.
+                        </p>
+                        <a href="/Home/contacts">Contacts</a>
+                    </div>
+                    <div>
+                        <h4>Links</h4>
+                        <ul>
+                            <li>
+                                <a href="/Home/index">Home</a>
+                            </li>
+                            <li>
+                                <a href="/Home/about">About</a>
+                            </li>
+                            <li>
+                                <a href="/Home/service">Services</a>
+                            </li>
+                            <li>
+                                <a href="/Home/doctors">Doctors</a>
+                            </li>
+                            <li>
+                                <a href="/Home/contacts">Contact</a>
+                            </li>
+                            <li>
+                                <a href="/Home/Reports">Reports</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="connect">
+                        <h4>Keep In Touch</h4>
+                        <a href="http://twitter.com" id="twitter">twitter</a> <a href="http://facebook.com" id="facebook">facebook</a> <a href="http://google.com" id="googleplus">google+</a>
+                    </div>
+                </div>
+                <p>
+                    &#169; Copyright 2015. All rights reserved :P
+                </p>
+            </div>*@
+    </div>
+</body>
+
+
+
+</html>
+
+

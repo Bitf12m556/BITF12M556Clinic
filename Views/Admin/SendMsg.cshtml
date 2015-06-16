@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "SendMsg";
+    Layout = "~/Views/shared/AdminLayout.cshtml";
+}
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Message- Medical Hospital Website Template</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery-2.1.4.min.js"></script>
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+    <div class="body">
+        <div class="contact">
+            <div>
+                <div>
+                    <div>
+                        <h1>{ Message }</h1>                              
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Send a message</h4>
+
+                            <form action="SendMsgs" method="post">
+                                <div class="inputs">
+
+                                    <label for="name">User id:</label>
+                                    <input type="text" id="id" name="id" required>
+
+                                    <label for="message">Message:</label>
+                                    <textarea name="inbox" id="inbox" cols="30" rows="10" required></textarea>
+
+                                    <span>
+                                        <button type="submit" id="submit">Send</button>
+                                        @*<button type="submit" id="submit" value="Send"></button>*@
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <div>
+                <h4>Contact</h4>
+                <p>
+                    You can replace all this text with your own text.
+                </p>
+                <a href="/Home/contacts">Contacts</a>
+            </div>
+            <div>
+                <h4>Links</h4>
+                <ul>
+                    <li>
+                        <a href="/Home/index">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Home/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/Home/service">Services</a>
+                    </li>
+                    <li>
+                        <a href="/Home/doctors">Doctors</a>
+                    </li>
+                    <li>
+                        <a href="/Home/contacts">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/Home/Reports">Reports</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="connect">
+                <h4>Keep In Touch</h4>
+                <a href="http://twitter.com" id="twitter">twitter</a> <a href="http://facebook.com" id="facebook">facebook</a> <a href="http://google.com" id="googleplus">google+</a>
+            </div>
+        </div>
+        <p>
+            &#169; Copyright 2015. All rights reserved :P
+        </p>
+    </div>
+
+</body>
+</html>

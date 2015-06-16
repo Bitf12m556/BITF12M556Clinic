@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/shared/AccountLayout.cshtml";
+}
+
+
+<html>
+<head>
+
+
+    <title>SignIn- Medical Hospital Website</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <script src="~/Content/jquery-2.1.4.min.js"></script>
+    <script src="~/Content/bootstrap.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+    <div class="page">
+        <div class="home-page">
+            <div class="container">
+                    <form id="signup" action="SigninUser" method="post">
+                        <div class="header">
+                            <h3>Sign In</h3> </div>
+
+                        <div class="sep"></div>
+
+                        <div class="inputs">
+                            <input type="name" name="name" placeholder="Name" required />
+
+                            <input type="password" name="pass" placeholder="Password" required />
+
+
+                            <button id="submit" href="/Home/index">Sign In</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+       </div>
+</body>
+
+
+</html>
